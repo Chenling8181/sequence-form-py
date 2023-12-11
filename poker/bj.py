@@ -78,14 +78,6 @@ def init_efg(num_ranks=11,
                         _p_chance(rnd, board, i, j) * (-value(i, j) + \
                                                      payoff_shift)))
 
-    def _build_fold(rnd, board, who_folded, win_amount, previous_seq):
-        if who_folded == 1:
-            win_amount = -win_amount
-
-        def _value(i, j):
-            return win_amount
-
-        _build_terminal(rnd, board, _value, previous_seq)
 
     def _build_showdown(rnd, board, win_amount, previous_seq):
         def _value(i, j):
